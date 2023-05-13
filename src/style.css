@@ -537,11 +537,12 @@ input[type="radio"]:checked {
   height: 3rem;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--textColor);
+  color: var(--textColor) !important;
 }
 .newItem > i {
   margin-right: 0.5rem;
   border-radius: 1rem;
+  color: var(--textColor) !important;
 }
 .newItem:hover {
   background-color: rgba(0, 0, 0, 0.1);
