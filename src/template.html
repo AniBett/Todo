@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <button id="expand">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="logoText">
+        <h5 class="headerTitle">ToDo List</h5>
+      </div>
+      <div class="move"></div>
+    </div>
+    <div class="mainContainer">
+      <div id="navBar" class="closed">
+        <div class="singleTasks hidden">
+          <div class="allTasks">
+            <i class="fa-solid fa-inbox"></i>
+            <div>All Tasks</div>
+          </div>
+          <div class="today">
+            <i class="fa-solid fa-calendar-day"></i>
+            <div>Today</div>
+          </div>
+          <div class="week">
+            <i class="fa-solid fa-calendar-week"></i>
+            <div>This Week</div>
+          </div>
+          <div class="important">
+            <i hidden="true" class="fa-solid fa-circle-exclamation"></i>
+            <div>Important</div>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="taskTitleHeader">Hello!</div>
+
+        <div class="board"></div>
+      </div>
+    </div>
+  </body>
+</html>

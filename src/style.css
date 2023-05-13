@@ -1,0 +1,550 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* My CSS */
+:root {
+  font-family: sans-serif;
+  font-size: 16px;
+
+  --bgColor2: #ececec;
+  --bgColor3: #f2f3f5;
+  --bgColor1: #fefcfe;
+  --bgColorPopUp: #f3f1f3;
+  --textColor: #374958;
+  --hoverColor: rgba(0, 0, 0, 0.1);
+  --accent: #2abd67;
+  --selectedAccent: hsl(145, 64%, 45%, 0.5);
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--textColor);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: var(--bgColor2);
+  box-sizing: border-box;
+  align-items: center;
+  border-bottom: 0.2rem solid var(--accent);
+}
+.move {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.header > button {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 2.5rem;
+  border: none;
+  background-color: inherit;
+  text-align: center;
+}
+.header > button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.logoText {
+  margin: 0 auto;
+
+  font-size: 3rem;
+  font-weight: bold;
+}
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+#navBar.closed {
+  height: 0%;
+  width: 0%;
+  padding: 0rem;
+  margin: 0rem;
+  transition: 100ms ease-out;
+}
+
+#navBar {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 30%;
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+.singleTasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.singleTasks > div {
+  width: 100%;
+  display: flex;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.singleTasks > div > div {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  margin-left: 0.7rem;
+}
+.singleTasks > div:hover {
+  background-color: var(--hoverColor);
+}
+.singleTasks > .selected {
+  background-color: var(--accent);
+  font-weight: bold;
+}
+.singleTasks > .selected:hover {
+  background-color: var(--selectedAccent);
+}
+.singleTasks > div > i {
+  margin-left: 1rem;
+}
+.hidden {
+  visibility: hidden;
+  height: 0%;
+  width: 0%;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 2rem;
+  background-color: var(--bgColor2);
+}
+/* Form Stuff*/
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  background-color: var(--bgColor1);
+}
+.todoForm {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.top > div > label,
+.bottom > div > label {
+  margin-top: 0.4rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+.todoForm > div > div > textarea,
+select,
+input {
+  height: 2rem;
+  border-radius: 0.25rem;
+  border: 0.15rem solid var(--textColor);
+  font-size: 1rem;
+  color: var(--textColor);
+}
+.priority {
+  height: 2.3rem;
+  background-color: inherit;
+}
+.buttonContainer {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.submit,
+.cancel {
+  width: 5rem;
+  height: 2rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border: none;
+  font-size: 1rem;
+  color: var(--bgColor1);
+  font-weight: bold;
+  text-align: center;
+}
+.submit {
+  background-color: var(--accent);
+}
+.cancel {
+  background-color: rgb(190, 4, 4);
+}
+.submit:hover {
+  background-color: var(--selectedAccent);
+}
+.submit:focus,
+.cancel:focus {
+  transform: scale(0.95);
+}
+.cancel:hover {
+  background-color: rgba(190, 4, 4, 0.5);
+}
+
+@media (max-width: 930px) {
+  :root {
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+  .mainContainer {
+    flex-direction: column;
+  }
+  #navBar {
+    width: auto;
+    align-items: center;
+  }
+  .taskTitleHeader {
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+  .leftSide > #Title {
+    font-size: 1.2rem;
+  }
+  .leftSide > #Description {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 500px) {
+  .leftSide > input {
+    width: 10rem !important;
+  }
+}
+@media (max-width: 290px) {
+  .task {
+    flex-direction: column;
+  }
+  .rightSide {
+    flex-direction: column;
+  }
+}
+.titleContainer,
+.descriptionContainer,
+.dateContainer,
+.priorityContainer {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+/* Task Board */
+
+.taskTitleHeader {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--accent);
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.board {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  outline: 0.1rem solid black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.task:hover {
+  background-color: var(--hoverColor);
+}
+.task > .rightSide {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  margin: 0.5rem;
+}
+.task > .leftSide {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin: 0.5rem;
+}
+input[type="radio"] {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 2px solid #000;
+  color: var(--accent);
+}
+input[type="radio"]:checked {
+  color: var(--accent);
+}
+.leftSide.completed {
+  text-decoration: line-through;
+}
+.leftSide > div {
+  transition: 0.2s ease-in-out;
+}
+.leftSide > div:hover {
+  transform: scaley(1.1) scaleX(1.01);
+}
+.leftSide > #Description {
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  cursor: pointer;
+}
+.leftSide > #Title {
+  cursor: pointer;
+  font-weight: bold;
+}
+.rightSide > #Duedate {
+  display: table-cell;
+  vertical-align: middle;
+  box-sizing: border-box;
+  outline: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  width: 5.8rem;
+  height: 1.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  padding-top: 0.35rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.rightSide > input {
+  width: 7.5rem !important;
+}
+.rightSide > select {
+  width: 3.8rem !important;
+}
+.rightSide > #Priority {
+  width: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.task > .rightSide > div {
+  box-sizing: border-box;
+  transition: 0.2s ease-in-out;
+}
+.task > .rightSide > button {
+  display: flex;
+  border: none;
+  background-color: inherit;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.task > .rightSide > button:hover {
+  transform: scale(1.1);
+}
+.task > .rightSide > div:hover {
+  transform: scale(1.1);
+}
+.Title,
+.Discription,
+.Priority,
+.Duedate {
+  width: 10rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+}
+.newItem {
+  background-color: inherit;
+  border: none;
+  margin-top: 1rem;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.newItem > i {
+  margin-right: 0.5rem;
+  border-radius: 1rem;
+}
+.newItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+}
+.newItem:focus {
+  transform: scale(0.95);
+}
