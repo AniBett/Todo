@@ -353,42 +353,6 @@ input {
   background-color: rgba(190, 4, 4, 0.5);
 }
 
-@media (max-width: 930px) {
-  :root {
-    font-size: 12px;
-    box-sizing: border-box;
-  }
-  .mainContainer {
-    flex-direction: column;
-  }
-  #navBar {
-    width: auto;
-    align-items: center;
-  }
-  .taskTitleHeader {
-    justify-content: center;
-    font-size: 2.5rem;
-  }
-  .leftSide > #Title {
-    font-size: 1.2rem;
-  }
-  .leftSide > #Description {
-    font-size: 1rem !important;
-  }
-}
-@media (max-width: 500px) {
-  .leftSide > input {
-    width: 10rem !important;
-  }
-}
-@media (max-width: 290px) {
-  .task {
-    flex-direction: column;
-  }
-  .rightSide {
-    flex-direction: column;
-  }
-}
 .titleContainer,
 .descriptionContainer,
 .dateContainer,
@@ -550,4 +514,40 @@ input[type="radio"]:checked {
 }
 .newItem:focus {
   transform: scale(0.95);
+}
+@media (max-width: 930px) {
+  :root {
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+  .mainContainer {
+    flex-direction: column;
+  }
+  #navBar {
+    width: auto;
+    align-items: center;
+  }
+  .taskTitleHeader {
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+  .leftSide > #Title {
+    font-size: 1.2rem;
+  }
+  .leftSide > #Description {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 500px) {
+  .leftSide > input {
+    width: 10rem !important;
+  }
+}
+@media (max-width: 290px) {
+  .task {
+    flex-direction: column;
+  }
+  .rightSide {
+    flex-direction: column;
+  }
 }
