@@ -380,6 +380,9 @@ input {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
 }
 .task {
   display: flex;
@@ -484,16 +487,7 @@ input[type="radio"]:checked {
 .task > .rightSide > div:hover {
   transform: scale(1.1);
 }
-.Title,
-.Discription,
-.Priority,
-.Duedate {
-  width: 10rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 
-  overflow: hidden;
-}
 .newItem {
   background-color: inherit;
   border: none;
@@ -537,6 +531,26 @@ input[type="radio"]:checked {
   }
   .leftSide > #Description {
     font-size: 1rem !important;
+  }
+  .header > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .board > div {
+    outline: none;
+  }
+  .task {
+    border: 0.1rem solid var(--textColor) !important;
+  }
+  .rightSide > button > i {
+    color: var(--textColor);
+  }
+  .rightSide > div {
+    outline: none !important;
+  }
+  .rightSide > #Duedate {
+    border: 0.1rem solid var(--textColor) !important;
   }
 }
 @media (max-width: 500px) {
