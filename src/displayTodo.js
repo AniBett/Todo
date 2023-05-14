@@ -43,8 +43,17 @@ export default function displayTodo(key) {
 
   Priority.innerHTML = obj.Priority;
   const threeDot = document.createElement("button");
-  threeDot.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+  const trashIcon = document.createElement("i");
+  trashIcon.className = "fa-solid fa-trash";
+  threeDot.appendChild(trashIcon);
   threeDot.addEventListener("click", (e) => {
+    console.log(e.target.tagName);
+    if (e.target.tagName === "BUTTON") {
+      e.stopPropagation(); // Stop the click event from propagating further
+      trashIcon.click();
+      trashIcon.blur();
+      return;
+    }
     removeTask(e);
   });
 

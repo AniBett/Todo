@@ -546,12 +546,6 @@ input[type="radio"]:checked {
   .rightSide > button > i {
     color: var(--textColor);
   }
-  .rightSide > div {
-    outline: none !important;
-  }
-  .rightSide > #Duedate {
-    border: 0.1rem solid var(--textColor) !important;
-  }
 }
 @media (max-width: 500px) {
   .leftSide > input {
